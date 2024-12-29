@@ -13,11 +13,13 @@ body{
 #forMargin{
     height: 200px;
     width: 80%;
-    background-color: red;
+    background-color: rgb(237, 233, 233);
     margin: 50px ;
 }
 
 .forPadding{
+    border: 5px,solid,black;
+    border-radius: 50%;
     height: 70%;
     width: 70%;
     padding: 15px;
@@ -25,9 +27,9 @@ body{
     background-color: rgb(162, 255, 0);
 }
 
-p{
+/* p{
     background-color: aliceblue;
     padding: 120px;
     height: 70%;
     width: 70%;
-}
+} */
