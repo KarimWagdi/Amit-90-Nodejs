@@ -32,7 +32,7 @@ function calcTip(...data){
             total.push(bill + bill * 0.20)
         }
     })
-    return tip / total
+    return {tip , total}
 }
 
 
