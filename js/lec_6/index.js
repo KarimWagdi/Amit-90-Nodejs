@@ -1,12 +1,12 @@
 // logical operators
 // && || 
-// console.log( 3 || "name");
-// console.log( 0 || "value");
-// console.log( true || 0);
-// console.log( true || 1);
-// console.log( undefined || null);
-// console.log(false ||  undefined || null || 0 ||  ''); // ''
-// console.log(false ||  undefined||  8  || null || 0 ||  ''); // 8
+console.log( 3 || "name");
+console.log( 0 || "value");
+console.log( true || 0);
+console.log( true || 1);
+console.log( undefined || null);
+console.log(false ||  undefined || null || 0 ||  ''); // ''
+console.log(false ||  undefined||  8  || null || 0 ||  ''); // 8
 
 // let age = 12 
 // let fName = 'WAGDI'
