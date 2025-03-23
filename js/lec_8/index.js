@@ -1,3 +1,7 @@
+import name from '../lec_9/script';
+
+console.log(name);
+
 // // // const User = function (firstName, lastName) {
 // // //     this.firstName = firstName;
 // // //     this.lastName = lastName;
