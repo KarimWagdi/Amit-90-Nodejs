@@ -1,26 +1,23 @@
-import ConditionalRenderer from "./components/ConditionalRendering"
-import Counter from "./components/Counter"
-import Form from "./components/Form"
-import Fruits from "./components/Fruits"
-import Hello from "./components/Hello"
-import InlineComponent from "./components/InlineStyle"
-import Message from "./components/Message"
-import OutlineComponent from "./components/Outline"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
+import Form from "./components/Form.jsx";
+import PageNotFound from "./pages/PageNotFound.jsx";
+import Products from "./pages/Products.jsx";
 
 function App() {
-  
   return (
-    <div>
-      {/* <Hello name="wagdi" age={30}>
-        <h2>Hello from component!</h2>
-        <p>This is a test</p>
-      </Hello> */}
-      {/* <Counter/> */}
-      {/* <Form /> */}
-      {/* <InlineComponent/> */}
-      <OutlineComponent />
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="Form" element={<Form />} />
+        </Route>
+        <Route path="*" element={<PageNotFound />} />
+        <Route path="/product/:id" element={<Products />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
