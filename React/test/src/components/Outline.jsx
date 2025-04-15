@@ -1,9 +1,11 @@
-import '../css/style.css';
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
-export default function OutlineComponent(){
-    return(
-        <>
-            <h1 className='header'>Inline Component</h1>
-        </>
-    )
+export default function OutlineComponent() {
+  const { name } = useContext(UserContext);
+  return (
+    <>
+      <h1>Inline Component {name}</h1>
+    </>
+  );
 }

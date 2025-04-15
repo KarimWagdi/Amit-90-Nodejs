@@ -1,22 +1,25 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import Dashboard from "./pages/Dashboard";
-import Form from "./components/Form.jsx";
-import PageNotFound from "./pages/PageNotFound.jsx";
-import Products from "./pages/Products.jsx";
-
-function App() {
+import OutlineComponent from "./components/Outline";
+import InputComponent from "./components/Input";
+import useLogger from "./hooks/useLooger.js";
+import { UserProvider } from "./context/UserContext";
+import useLocalStorage from "./hooks/useLocalStorage.js";
+// import localStorage from "react";
+export function App() {
+  const [logComponentRender] = useLogger();
+  const [setValue] = useLocalStorage();
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />}>
-          <Route path="Form" element={<Form />} />
-        </Route>
-        <Route path="*" element={<PageNotFound />} />
-        <Route path="/product/:id" element={<Products />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <UserProvider>
+        <h1>Hello from app</h1>
+        <InputComponent />
+        <OutlineComponent />
+      </UserProvider>
+      {logComponentRender()}
+      {localStorage.setItem("name", "John Doe")}
+      {localStorage.getItem("name")}
+      {setValue("wagdi")}
+      <h2>Rendering logger component</h2>
+    </>
   );
 }
 
