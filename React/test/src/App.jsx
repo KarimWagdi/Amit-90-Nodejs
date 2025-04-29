@@ -1,24 +1,14 @@
-import OutlineComponent from "./components/Outline";
-import InputComponent from "./components/Input";
-import useLogger from "./hooks/useLooger.js";
-import { UserProvider } from "./context/UserContext";
-import useLocalStorage from "./hooks/useLocalStorage.js";
-// import localStorage from "react";
+import Parent from "./components/Parent";
+import { useState } from "react";
 export function App() {
-  const [logComponentRender] = useLogger();
-  const [setValue] = useLocalStorage();
+  const [count, setCount] = useState(0);
   return (
     <>
-      <UserProvider>
-        <h1>Hello from app</h1>
-        <InputComponent />
-        <OutlineComponent />
-      </UserProvider>
-      {logComponentRender()}
-      {localStorage.setItem("name", "John Doe")}
-      {localStorage.getItem("name")}
-      {setValue("wagdi")}
-      <h2>Rendering logger component</h2>
+      <h1>App</h1>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      <Parent />
     </>
   );
 }
